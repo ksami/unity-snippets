@@ -22,8 +22,8 @@ public class MoveHop : MonoBehaviour {
     }
 
     void Update() {
-        // if object is not moving in the x-z plane
-        if (transform.position.x == prevPosition.x || transform.position.z == prevPosition.z) {
+        // if object is animated and not moving in the x-z plane
+        if (isAnimated && (transform.position.x == prevPosition.x && transform.position.z == prevPosition.z)) {
             isAnimated = false;
             iTween.Pause(gameObject);
         // if object is not already hopping
